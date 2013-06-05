@@ -34,10 +34,12 @@ define([], function() {
 		if(starbiochem_state)
 		{
 			starbiochem_state.element_id = config_obj.element_id;
-			starbiochem_state.width = config_obj.width ? config_obj.width : 300;
 			starbiochem_state.height = config_obj.height ? config_obj.height : 300;
-			starbiochem_state.color = config_obj.color ? config_obj.color : "green";
+			starbiochem_state.width = starbiochem_state.height;
+			starbiochem_state.color = config_obj.background ? config_obj.background : "green";
+			starbiochem_state.script = config_obj.molecule ? "set antialiasDisplay;load " + config_obj.molecule + ";" : "set antialiasDisplay;load jsmol/data/caffeine.mol;";
 			starbiochem_state.debug = false;
+			alert("main.parse_config molecule: " + config_obj.molecule + " script: " + starbiochem_state.script);
 		}
 		else
 		{
@@ -98,13 +100,14 @@ define([], function() {
 	function initialize_UI()
 	{
 		var element = $('#' + starbiochem_state.element_id);
-		element.append("<span id='" + starbiochem_state.element_id_starbiochem + "'></span>");
+		var default_height_html = " height=" + starbiochem_state.height + " ";
+		element.append("<span id='" + starbiochem_state.element_id_starbiochem + "' " + default_height_html + "></span>");
 
 		var starbiochem = $('#' + starbiochem_state.element_id_starbiochem);
 		starbiochem.data("starbiochem_state", starbiochem_state);
 		starbiochem.append('<script type="text/javascript" src="jsmol/js/JSmoljQuery.js"></script> <script type="text/javascript" src="jsmol/js/JSmolCore.js"></script> <script type="text/javascript" src="jsmol/js/JSmol.js"></script> <script type="text/javascript" src="jsmol/js/JSmolApplet.js"></script> <script type="text/javascript" src="jsmol/js/JSmolControls.js"></script> <script type="text/javascript" src="jsmol/js/JSmolApi.js"></script> <script type="text/javascript" src="jsmol/js/j2sjmol.js"></script>');
-		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_jmol + "'></span>");
-		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_ui + "'></span>");
+		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_jmol + "' " + default_height_html + "></span>");
+		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_ui + "' " + default_height_html + "></span>");
 
 //		alert("main.initialize_UI() adding Jmol");
 		Jmol.setXHTML( starbiochem_state.element_id_starbiochem_jmol ) ;
