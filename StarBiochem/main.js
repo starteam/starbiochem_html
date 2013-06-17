@@ -1,4 +1,6 @@
-define([], function () {
+define([
+    'jquery'
+], function ($) {
     var starbiochem_state;
     function init_starbiochem_state() {
         var state = {

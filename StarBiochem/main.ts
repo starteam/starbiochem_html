@@ -1,4 +1,4 @@
-define([], function() {
+define(['jquery'], function($) {
 	
 	var starbiochem_state;
 
@@ -110,9 +110,19 @@ define([], function() {
 		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_ui + "' " + default_height_html + "></span>");
 
 //		alert("main.initialize_UI() adding Jmol");
+//        var later = function() {
+//            if( typeof(Jmol) != 'undefined' )
+//            {
 		Jmol.setXHTML( starbiochem_state.element_id_starbiochem_jmol ) ;
 		starbiochem_state.jsmol = Jmol.getApplet(starbiochem_state.element_id_jmol, starbiochem_state);
 //		alert("main.initialize_UI() starbiochem.html: " + starbiochem.html);
+//            }
+//            else
+//            {
+//                setTimeout( later, 100 );
+//            }
+//        }
+//        later();
 	}
 
 	
