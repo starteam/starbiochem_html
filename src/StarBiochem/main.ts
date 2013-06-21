@@ -1,4 +1,4 @@
-define([], function() {
+define(['jquery'], function($) {
 	
 	var starbiochem_state;
 
@@ -12,7 +12,7 @@ define([], function() {
 		state.addSelectionOptions = false;
 		state.serverURL = "http://chemapps.stolaf.edu/jmol/jsmol/jsmol.php";
 		state.use = "HTML5";
-		state.j2sPath = "StarBiochem/jsmol/j2s";
+		state.j2sPath = "src/StarBiochem/jsmol/j2s";
 		state.readyFunction = jmol_isReady;
 		state.script = "set antialiasDisplay;load jsmol/data/caffeine.mol;";
 		state.disableJ2SLoadMonitor = true;
@@ -105,14 +105,24 @@ define([], function() {
 
 		var starbiochem = $('#' + starbiochem_state.element_id_starbiochem);
 		starbiochem.data("starbiochem_state", starbiochem_state);
-		starbiochem.append('<script type="text/javascript" src="StarBiochem/jsmol/js/JSmoljQuery.js"></script> <script type="text/javascript" src="StarBiochem/jsmol/js/JSmolCore.js"></script> <script type="text/javascript" src="StarBiochem/jsmol/js/JSmol.js"></script> <script type="text/javascript" src="StarBiochem/jsmol/js/JSmolApplet.js"></script> <script type="text/javascript" src="StarBiochem/jsmol/js/JSmolControls.js"></script> <script type="text/javascript" src="StarBiochem/jsmol/js/JSmolApi.js"></script> <script type="text/javascript" src="StarBiochem/jsmol/js/j2sjmol.js"></script>');
+		starbiochem.append('<script type="text/javascript" src="src/StarBiochem/jsmol/js/JSmoljQuery.js"></script> <script type="text/javascript" src="src/StarBiochem/jsmol/js/JSmolCore.js"></script> <script type="text/javascript" src="src/StarBiochem/jsmol/js/JSmol.js"></script> <script type="text/javascript" src="src/StarBiochem/jsmol/js/JSmolApplet.js"></script> <script type="text/javascript" src="src/StarBiochem/jsmol/js/JSmolControls.js"></script> <script type="text/javascript" src="src/StarBiochem/jsmol/js/JSmolApi.js"></script> <script type="text/javascript" src="src/StarBiochem/jsmol/js/j2sjmol.js"></script>');
 		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_jmol + "' " + default_height_html + "></span>");
 		starbiochem.append("<span id='" + starbiochem_state.element_id_starbiochem_ui + "' " + default_height_html + "></span>");
 
 //		alert("main.initialize_UI() adding Jmol");
+//        var later = function() {
+//            if( typeof(Jmol) != 'undefined' )
+//            {
 		Jmol.setXHTML( starbiochem_state.element_id_starbiochem_jmol ) ;
 		starbiochem_state.jsmol = Jmol.getApplet(starbiochem_state.element_id_jmol, starbiochem_state);
 //		alert("main.initialize_UI() starbiochem.html: " + starbiochem.html);
+//            }
+//            else
+//            {
+//                setTimeout( later, 100 );
+//            }
+//        }
+//        later();
 	}
 
 	
