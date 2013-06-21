@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/starbiochem_html.iml" filepath="$PROJECT_DIR$/.idea/starbiochem_html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../starx/.idea/starx.iml" filepath="$PROJECT_DIR$/../starx/.idea/starx.iml" />
     </modules>
   </component>
 </project>
