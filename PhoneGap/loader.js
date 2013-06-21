@@ -1,6 +1,6 @@
 $(function() {
 var config = {
-    "molecule":"StarBiochem/data/1EBM.pdb",
+    "molecule":"src/StarBiochem/data/1EBM.pdb",
     "element_id": "test"
 };
 
@@ -20,7 +20,7 @@ requirejs.config({
                     }
                 });
 
-require(['StarBiochem/main'], function(project){
+require(['src/StarBiochem/main'], function(project){
     project.configure(config);
 });
 });
