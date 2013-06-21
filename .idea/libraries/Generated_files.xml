@@ -2,11 +2,12 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/StarBiochem/main.js" />
+        <item url="file://$PROJECT_DIR$/src/soy_example/test.soy.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/src/StarBiochem/main.js" />
+      <root url="file://$PROJECT_DIR$/src/StarBiochem/soy_example/test.soy.js" />
     </CLASSES>
     <SOURCES />
   </library>

@@ -27,6 +27,46 @@
       <option name="workingDir" value="$FileDir$" />
       <envs />
     </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="$FileDir$/$FileName$" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" value="Watches for .soy for and invokes StarX Closure compiler" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="soy" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Soy Watcher" />
+      <option name="output" value="$FileDir$/$FileName$.js" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="$PROJECT_DIR$/../starx/soy2js.py" />
+      <option name="scopeName" value="Project Files" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="$ProjectFileDir$" />
+      <envs />
+    </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="" />
+      <option name="checkSyntaxErrors" value="false" />
+      <option name="description" value="Executes .sh files in a Terminal commandline" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="bash script files" />
+      <option name="immediateSync" value="false" />
+      <option name="name" value=".sh File Watcher" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="$PROJECT_DIR$/serve.sh" />
+      <option name="scopeName" value="Project Files" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="" />
+      <envs />
+    </TaskOptions>
   </component>
 </project>
 
